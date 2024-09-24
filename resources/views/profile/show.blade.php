@@ -96,7 +96,7 @@
 							@endforeach
 						</ul>
 					@else
-						<p class="text-muted">Nessuna specializzazione aggiunta.</p>
+						<p>Nessuna specializzazione aggiunta.</p>
 					@endif
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 								@endforeach
 							</ul>
 						@else
-							<p class="text-muted">Nessuna recensione ricevuta.</p>
+							<p >Nessuna recensione ricevuta.</p>
 						@endif
 						<a href="{{ route('doctors.reviews', $doctor->id) }}" class="btn btn-view-reviews">Visualizza Tutte le
 							Recensioni</a>
@@ -146,7 +146,7 @@
 								@endforeach
 							</ul>
 						@else
-							<p class="text-muted">Nessun messaggio ricevuto.</p>
+							<p>Nessun messaggio ricevuto.</p>
 						@endif
 						<a href="{{ route('doctors.messages', $doctor->id) }}" class="btn btn-view-reviews">Visualizza Tutti i
 							Messaggi</a>
