@@ -1,66 +1,43 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+BDoctors - Professional Medical Profiles
+BDoctors è un'applicazione web sviluppata in gruppo utilizzando Laravel. Consente ai medici di creare un profilo professionale e di gestire la propria visibilità online acquistando sponsorizzazioni. Le sponsorizzazioni permettono ai medici di aumentare la visibilità del loro profilo per un periodo limitato, attraverso il sistema di pagamento integrato Braintree.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Caratteristiche principali
+Operazioni CRUD: Ogni medico può creare, visualizzare, modificare ed eliminare il proprio profilo professionale.
+Profili dettagliati: I medici possono fornire informazioni dettagliate come biografia, specializzazioni, immagini del profilo e curriculum (CV).
+Sponsorizzazioni: Possibilità di acquistare sponsorizzazioni per aumentare la visibilità del profilo per un certo periodo di tempo.
+Pagamenti con Braintree: Integrazione con Braintree per gestire i pagamenti in modo sicuro e affidabile.
+Tecnologie utilizzate
+Backend: Laravel 9.x (PHP)
+Frontend: Vue.js (per alcune parti interattive dell'interfaccia utente)
+Database: MySQL
+Autenticazione: Laravel Breeze
+Pagamenti: Braintree (integrazione tramite braintree-web-drop-in)
 
-## About Laravel
+Funzionalità
+Operazioni CRUD per il profilo medico
+Ogni utente registrato può creare e gestire il proprio profilo professionale. Le informazioni che possono essere inserite nel profilo includono:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Nome, cognome, indirizzo e numero di telefono
+Specializzazioni
+Biografia professionale
+Immagine del profilo e curriculum vitae (CV)
+Sponsorizzazioni
+I medici possono acquistare diverse sponsorizzazioni per aumentare la visibilità del loro profilo. Le sponsorizzazioni disponibili sono:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Basic: Visibilità per 30 giorni al costo di 29,99€
+Premium: Visibilità per 60 giorni al costo di 49,99€
+Gold: Visibilità per 90 giorni al costo di 79,99€
+Il sistema di pagamento è gestito tramite Braintree, che offre una piattaforma sicura e affidabile per effettuare le transazioni.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sviluppo
+Struttura del database
+La struttura del database include tabelle per la gestione dei medici, delle specializzazioni, delle recensioni, e delle sponsorizzazioni. Alcune delle tabelle principali includono:
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+users: Contiene le informazioni di base sugli utenti registrati.
+doctors: Contiene i dettagli del profilo medico.
+reviews: contiene le recensioni da parte degli utenti.
+messages: contiene i messaggi inviati dagli utenti.
+specializations: Contiene le specializzazioni disponibili.
+doctor_sponsorship: Tabella pivot che collega i medici alle specializzazioni.
+sponsorships: Contiene le informazioni sulle sponsorizzazioni.
+doctor_sponsorship: Tabella pivot che collega i medici alle sponsorizzazioni acquistate
